@@ -1,16 +1,21 @@
 version: 2
 
 jobs:
-  test:
-    working_directory: ~/app
+  build:
     environment: []
     docker:
-      - image: circleci/ccidemo
+      - image: debian:stretch
+
     steps:
       - checkout
+
       - run:
-        name: 'Your test'
-        command: 'true'
+          name: Greeting
+          command: echo Hello, world.
+
+      - run:
+          name: Print the Current Time
+          command: date
 
 workflows:
   version: 2
