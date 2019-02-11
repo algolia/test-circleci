@@ -17,3 +17,6 @@ workflows:
   suite:
     jobs:
       - test
+          filters:
+            branches:
+              only: []
