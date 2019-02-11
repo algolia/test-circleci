@@ -23,4 +23,5 @@ workflows:
     jobs:
       - test:
           filters:
-            branches: []
+            branches:
+              only: []
