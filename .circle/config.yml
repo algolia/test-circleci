@@ -1,0 +1,19 @@
+version: 2
+
+jobs:
+  test:
+    working_directory: ~/app
+    environment: []
+    docker:
+      - image: circleci/ccidemo
+    steps:
+      - checkout
+      - run:
+        name: 'Your test'
+        command: 'true'
+
+workflows:
+  version: 2
+  suite:
+    jobs:
+      - test
