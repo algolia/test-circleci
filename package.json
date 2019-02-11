@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/algolia/test-circleci/issues"
   },
-  "homepage": "https://github.com/algolia/test-circleci#readme"
+  "homepage": "https://github.com/algolia/test-circleci#readme",
+  "devDependencies": {
+    "jest": "^24.1.0"
+  }
 }
