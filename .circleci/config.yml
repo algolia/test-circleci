@@ -1,28 +1,43 @@
 version: 2
 
 jobs:
-  build:
-    environment: {}
+  setup:
+    working_directory: ~/app
     docker:
-      - image: debian:stretch
-
+      - image: circleci/node:10.15.1
     steps:
       - checkout
+      - run: yarn install
+      - persist-to-workspace:
+          root: .
+          paths: .
 
-      - run:
-          name: Greeting
-          command: echo Hello, world.
+  lint:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:10.15.1
+    steps:
+      - attach-workspace:
+          at: ~/app/
+      - run: yarn lint
 
-      - run:
-          name: Print the Current Time
-          command: date
+  test:
+    working_directory: ~/app
+    docker:
+      - image: circleci/node:10.15.1
+    steps:
+      - attach-workspace:
+          at: ~/app/
+      - run: yarn test
 
 workflows:
   version: 2
   suite:
     jobs:
-      - build:
-          filters:
-            branches:
-              only:
-                - imabranchwhichdoesntexist
+      - build
+      - lint:
+          requires:
+            - build
+      - test:
+          requires:
+            - build
