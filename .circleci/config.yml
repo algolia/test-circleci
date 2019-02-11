@@ -37,7 +37,7 @@ workflows:
       - setup
       - lint:
           requires:
-            - build
+            - setup
       - test:
           requires:
-            - build
+            - setup
