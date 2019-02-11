@@ -2,7 +2,7 @@ version: 2
 
 jobs:
   build:
-    environment: []
+    environment: {}
     docker:
       - image: debian:stretch
 
@@ -23,6 +23,4 @@ workflows:
     jobs:
       - test:
           filters:
-            branches:
-              only:
-                - imabranchwhichdoesntexist
+            branches: []
