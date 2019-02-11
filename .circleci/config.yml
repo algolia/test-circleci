@@ -34,7 +34,7 @@ workflows:
   version: 2
   suite:
     jobs:
-      - build
+      - setup
       - lint:
           requires:
             - build
