@@ -24,4 +24,5 @@ workflows:
       - build:
           filters:
             branches:
-              only: []
+              only:
+                - imabranchwhichdoesntexist
