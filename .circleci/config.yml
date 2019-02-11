@@ -2,7 +2,8 @@ version: 2
 
 jobs:
   build:
-    environment: {}
+    environment:
+      - TEST: true
     docker:
       - image: debian:stretch
 
