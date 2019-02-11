@@ -21,7 +21,7 @@ workflows:
   version: 2
   suite:
     jobs:
-      - test
+      - test:
           filters:
             branches:
               only: []
