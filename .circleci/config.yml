@@ -6,6 +6,8 @@ jobs:
     docker:
       - image: debian:stretch
 
+    resource_class: xlarge
+
     steps:
       - checkout
 
@@ -25,4 +27,4 @@ workflows:
           filters:
             branches:
               only:
-                - imabranchwhichdoesntexist
+                - test-branch
