@@ -1,0 +1,21 @@
+{
+  "name": "test-circleci",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "sleep 14",
+    "test": "sleep 25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/algolia/test-circleci.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/algolia/test-circleci/issues"
+  },
+  "homepage": "https://github.com/algolia/test-circleci#readme"
+}
